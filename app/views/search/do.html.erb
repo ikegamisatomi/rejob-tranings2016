@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>池上研修リジョブ</title>
+  </head>
+  <body>
+    一覧画面だよ
+    <p> <a href="job">案件ページへ</a></p>
+
+      <form action="search#do" method="area">
+      <p>
+      都道府県名：<input type="text" name="city" size="40">
+      </p>
+
+
+    <%= @jobs.count %>件です<br>
+    <% @jobs.each do |job| %>
+    『<%= job.title %>』<br>
+    →<%= job.description %><br><br>
+    <% end %>
+    </div>
+
+    <% Area.all.each do |area| %>
+    <a href="/search?city=<%= area.city %>"><%= area.city %></a><br>
+    <% end %>
+
+  </body>
+</html>
