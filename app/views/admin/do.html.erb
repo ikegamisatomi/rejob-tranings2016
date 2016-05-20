@@ -6,5 +6,18 @@
   <body>
     管理画面だよ
 
+<br>
+    <% Job.all.each do |job| %>
+    <a href="/edits?id=<%= job.id %>"><%= job.title %></a>
+
+    <form  action="edit" method="get">
+    </select>
+    <button type="submit" name="<%= job.id %>">編集</button>
+    </form>
+    <% end %>
+
+
+
+
   </body>
 </html>

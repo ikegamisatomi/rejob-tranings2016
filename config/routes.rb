@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'new_edit/do'
+
+  get 'edit/do'
+
   get 'admin/do'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
    get 'top' => 'top#do'
    get 'search' => 'search#do'
    get 'admin' => 'admin#do'
+   get 'edit' => 'edit#do'
+   get 'new_edit' => 'new_edit#do'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
