@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    管理画面だよ
+
+<br>
+<br>
+    <% Job.all.each do |job| %>
+    <a href="/job?id=<%= job.id %>"><%= job.title %></a>　<a href="/job?id=<%= job.id %>"><%= job.description %></a>
+
+
+    <form  action=/edit method="get">
+    </select name="id">
+    <button type="submit" name="<%= job.id %>">編集</button>
+    </form>
+    <% end %>
+
+<br>
+<br>
+
+      <a href="new">
+        <button type="submit" name="job">新規作成</button>
+      </a>
+
+      <% if flash[:notice] %>
+    　<div class="送信完了">
+      <%= flash[:notice] %>
+    　</div>
+  　　<% else flash[:alert] %>
+     <div class="送信できませんでした">
+      <%= flash[:alert] %>
+  　  </div>
+    　<% end %>
+
+  </body>
+</html>

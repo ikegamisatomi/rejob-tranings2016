@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'new_edit/do'
-
-  get 'edit/do'
+  get 'update/redirect_to'
 
   get 'admin/do'
 
@@ -17,9 +15,12 @@ Rails.application.routes.draw do
    get 'job' => 'job#do'
    get 'top' => 'top#do'
    get 'search' => 'search#do'
-   get 'admin' => 'admin#do'
-   get 'edit' => 'edit#do'
-   get 'new_edit' => 'new_edit#do'
+   get 'admin' => 'admin#admin'
+   get 'new' => 'admin#new'
+   post 'new_edit' => 'admin#new_edit'
+   post 'delete' => 'admin#delete'
+   get 'edit' => 'admin#edit'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
