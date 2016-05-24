@@ -11,26 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520082701) do
+ActiveRecord::Schema.define(version: 20160524025938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admins", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "areas", force: true do |t|
     t.string   "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "edits", force: true do |t|
-    t.string   "do"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "jobs", force: true do |t|
@@ -41,28 +30,13 @@ ActiveRecord::Schema.define(version: 20160520082701) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "new_edits", force: true do |t|
-    t.string   "do"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "news", force: true do |t|
-    t.string   "do"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "searches", force: true do |t|
-    t.string   "do"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tops", force: true do |t|
-    t.string   "do"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "sex"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

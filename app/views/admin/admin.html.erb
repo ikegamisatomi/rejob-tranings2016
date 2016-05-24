@@ -9,12 +9,9 @@
 <br>
 <br>
     <% Job.all.each do |job| %>
-    <a href="/job?id=<%= job.id %>"><%= job.title %></a>　<a href="/job?id=<%= job.id %>"><%= job.description %></a>
-
-
-    <form  action=/edit method="get">
-    </select name="id">
-    <button type="submit" name="<%= job.id %>">編集</button>
+    <a href="/job?id=<%= job.id %>"><%= job.title %></a>　<a href="/job?id=<%= job.id %>"><%= job.description %></a>   </select name="id">
+    <a href="/edit?id=<%= job.id %>"><button type="submit" name=>編集</button></a>
+    <form  action="edit" method="get">
     </form>
     <% end %>
 

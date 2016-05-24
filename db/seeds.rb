@@ -67,5 +67,11 @@ Area.create(city:  '鹿児島')
 Area.create(city:  '沖縄')
 
 
+User.create(name: '池上里実', age:'22', sex:'女', password:'reboj001')
+User.create(name: '野崎優子', age:'32', sex:'女', password:'rejob1234')
+User.create(name: '黒田廉', age:'24', sex:'女', password:'sakura123')
+User.create(name: '荻野夏帆', age:'44', sex:'女', password:'sakurapj')
+
+
 
 puts 'おめでとう！'

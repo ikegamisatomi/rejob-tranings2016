@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'mypage/mypage'
+
   get 'update/redirect_to'
 
   get 'admin/do'
@@ -12,15 +14,17 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-   get 'job' => 'job#do'
-   get 'top' => 'top#do'
-   get 'search' => 'search#do'
+   get 'job' => 'top#job'
+   get 'top' => 'top#top'
+   get 'search' => 'top#search'
    get 'admin' => 'admin#admin'
    get 'new' => 'admin#new'
    post 'new_edit' => 'admin#new_edit'
-   post 'delete' => 'admin#delete'
+   get 'delete' => 'admin#delete'
    get 'edit' => 'admin#edit'
-
+   post 'update' => 'admin#update'
+   get 'login' => 'mypage#login'
+   get 'mypage' => 'mypage#mypage'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

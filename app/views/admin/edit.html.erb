@@ -8,9 +8,24 @@
     編集ページだよ
 
 <br>
-    <a href="delete">
+<br>
+    <form action="update?id=<%=@job.id%>" method="post">
+      <input name="authenticity_token" type="hidden" value="1234" />
+            タイトル：<input type="text" name="title" value="<%= @job.title %>" size="40">　<br>
+            説明文　：<input type="text" name="description" value="<%= @job.description %>" size="80">  <br>
+
+            <button type="submit" name="job">更新</button>
+
+    </form>
+
+
+<br>
+<br>
+
+    <a href="delete?id=<%=@job.id%>">
       <button type="submit" name="job">削除</button>
     </a>
+
 
   </body>
 </html>
