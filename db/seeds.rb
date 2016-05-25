@@ -72,6 +72,13 @@ User.create(name: '野崎優子', age:'32', sex:'女', password:'rejob1234')
 User.create(name: '黒田廉', age:'24', sex:'女', password:'sakura123')
 User.create(name: '荻野夏帆', age:'44', sex:'女', password:'sakurapj')
 
+User_job.create(user_id: 1, job_id: 1)
+User_job.create(user_id: 2, job_id: 2)
+User_job.create(user_id: 3, job_id: 3)
+User_job.create(user_id: 4, job_id: 4)
+User_job.create(user_id: 5, job_id: 5)
+
+
 
 
 puts 'おめでとう！'

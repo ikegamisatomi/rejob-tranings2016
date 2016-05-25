@@ -25,6 +25,7 @@ Rails.application.routes.draw do
    post 'update' => 'admin#update'
    get 'login' => 'mypage#login'
    get 'mypage' => 'mypage#mypage'
+   get 'authenticate' => 'mypage#authenticate'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

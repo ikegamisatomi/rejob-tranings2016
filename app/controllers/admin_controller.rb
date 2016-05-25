@@ -27,8 +27,10 @@ class AdminController < ApplicationController
       @job = Job.find_by(id: params[:id])
     if
       @job.update(title: params[:title], description: params[:description])
+　　　 #flash[:notice] = "更新されました"
       redirect_to '/admin'
     else
+      #flash[:notice] = "更新失敗しました"
       redirect_to '/top'
    end
  end
@@ -37,8 +39,10 @@ class AdminController < ApplicationController
    def delete #削除
      if
        Job.find_by(id: params[:id]).destroy#どのジョブに紐付けるのか、paramsを使う
-       redirect_to '/admin'   #5/23 idが取れてないよってなってる
+　　　　#flash[:notice] = "削除しました"
+       redirect_to '/admin'
      else
+       #flash[:notice] = "削除失敗しました"
        redirect_to '/top'
    end
  end

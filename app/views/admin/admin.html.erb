@@ -4,6 +4,9 @@
     <title></title>
   </head>
   <body>
+
+<br>
+
     管理画面だよ
 
 <br>
@@ -22,15 +25,6 @@
         <button type="submit" name="job">新規作成</button>
       </a>
 
-      <% if flash[:notice] %>
-    　<div class="送信完了">
-      <%= flash[:notice] %>
-    　</div>
-  　　<% else flash[:alert] %>
-     <div class="送信できませんでした">
-      <%= flash[:alert] %>
-  　  </div>
-    　<% end %>
 
   </body>
 </html>

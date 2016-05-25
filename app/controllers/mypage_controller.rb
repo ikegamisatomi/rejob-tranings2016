@@ -1,21 +1,31 @@
 class MypageController < ApplicationController
 
   def login
-    if user = User.authenticate(params[:username], params[:password])
-      session[:user_id] = user.id # ユーザーIDをセッションに保存する
-      redirect_to "/mypage"
-
-    else redirect_to "/top"
   end
 
+
+  def authenticate
+      user = User.find_by(name: params[:name]) #ユーザーの名前から誰が入ろうとしているか特定
+      if user && user.password == params[:password]
+         session[:user_id] = user.id#入ろうとしているユーザーのid
+         redirect_to "/mypage?id=#{user.id}"
+    else
+      redirect_to "/top"
+    end
+  end
 
   def mypage
+    @user = User.find_by(id: params[:id])
+    if session[:user_id] == params[:id].to_i
+      #user && user.id == params[:id]
+       #session[:user_id] = user.id
+else
+  redirect_to "top"
+
+    @user = User.find_by(id: params[:id])#ユーザーのid
+  end
   end
 end
-#form for ユーザーに入力されたものを検索
-#もともとあるパスワードと、ユーザーが持っているパスワードが一致していたらおk
-#userテーブルを作る
-#session (params) 一定期間保存されている箱がある
-#session[:login] OK mypade  NG redirect_to top
-#
-#
+
+
+#応募リンクを工夫　create params session
