@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    求職者管理画面だよ
+
+  <br>
+  登録者数　<%=  User.count %>名
+  <br>
+  <% User.all.each do |user| %>
+  <p> <%= user.name %>　<%= user.age %>歳 <%= user.sex %>
+  <!-- 応募数<%= UsersJob.where(user_id: user.id).count %> -->
+  応募数：<%= User.find_by(id: user.id).users_jobs.count %>
+  <a href="/edit_user?id=<%= user.id %>"><button type="submit" name=>編集</button></a> </p>
+  <% end %>
+
+<!-- #job. user_jobs. count -->
+
+
+
+  </body>
+</html>

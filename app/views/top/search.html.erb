@@ -6,9 +6,8 @@
   </head>
   <body>
     一覧画面だよ
-    <p> <a href="job">案件ページへ</a></p>
 
-
+<br>
 
       <p>
         <form  action="search" method="get">
@@ -20,17 +19,22 @@
           <button type="submit" name="button">検索</button>
         </form>
 
-
+<br>
     <%= @jobs.count %>件です<br>
+
+<br>
     <% @jobs.each do |job| %>
-    『<%= job.title %>』<br>
-    →<%= job.description %><br><br>
+　　<a href="/job?id=<%= job.id %>">
+タイトル：『<%= job.title %>』<br>
+説明文　：<%= job.description %><br><br>
+    </a>
     <% end %>
-    </div>
 
     <% Area.all.each do |area| %>
     <a href="/search?city=<%= area.city %>"><%= area.city %></a><br>
     <% end %>
+
+
 
   </body>
 </html>

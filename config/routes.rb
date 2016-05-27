@@ -19,13 +19,21 @@ Rails.application.routes.draw do
    get 'search' => 'top#search'
    get 'admin' => 'admin#admin'
    get 'new' => 'admin#new'
-   post 'new_edit' => 'admin#new_edit'
-   get 'delete' => 'admin#delete'
+   post 'new_edit' => 'admin#new_edit' #スルーページ
+   get 'delete' => 'admin#delete' #スルー
    get 'edit' => 'admin#edit'
-   post 'update' => 'admin#update'
+   post 'update' => 'admin#update' #スルー
    get 'login' => 'mypage#login'
    get 'mypage' => 'mypage#mypage'
-   get 'authenticate' => 'mypage#authenticate'
+   get 'authenticate' => 'mypage#authenticate' #スルー
+   get 'entry' => 'entry#entry' #スルー
+   get 'admin_user' => 'admin#admin_user'
+   get 'edit_user' => 'admin#edit_user'
+   post 'edit_user_through' => 'admin#edit_user_through' #スルー
+   get 'user_delete' => 'admin#user_delete'
+   get 'new_user' => 'mypage#new_user'
+   post 'new_user_through' => 'mypage#new_user_through'
+   get 'logout' => 'mypage#logout'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

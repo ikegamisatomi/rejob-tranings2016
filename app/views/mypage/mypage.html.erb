@@ -8,5 +8,17 @@
     マイページ
 
         <form action="mypage?id=<%=@user.id%>" method="get">
+
+<br>
+
+        あなたの応募数：<%= @entry.count %>
+
+
+<br>
+
+      <p> <a href="top">TOPへ</a> </p>   
+
+      <p> <a href="logout">ログアウト</a> </p>
+
   </body>
 </html>

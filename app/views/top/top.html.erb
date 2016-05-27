@@ -6,11 +6,22 @@
   </head>
   <body>
     top画面だよ
-    <a href="job?id">案件ページへ</a>
+
 
     <a href="search">一覧ページへ</a>
 
     <a href="login">ログイン</a>
+
+    <a href="new_user">新規登録へ</a>
+
+
+<br>
+<br>
+
+
+    <% Job.all.each do |job| %>
+    <a href="/job?id=<%= job.id %>"><%= job.title %></a><br>
+    <% end %>
 
 
   </body>

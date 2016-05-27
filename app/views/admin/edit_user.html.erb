@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+求職者情報編集ページだよ
+
+<br>
+<br>
+    <form action="edit_user_through?id=<%=@user.id%>" method="post">
+      <input name="authenticity_token" type="hidden" value="1234" />
+            名前　：<input type="text" name="name" value="<%= @user.name %>" size="40">　<br>
+            年齢　：<input type="text" name="age" value="<%= @user.age %>" size="40">  <br>
+            性別　：<input type="text" name="sex" value="<%= @user.sex %>" size="40">  <br>
+
+            <button type="submit" name="job">更新</button>
+
+    </form>
+
+
+<br>
+<br>
+
+    <a href="user_delete?id=<%=@user.id%>">
+      <button type="submit" name="job">削除</button>
+    </a>
+
+
+
+  </body>
+</html>

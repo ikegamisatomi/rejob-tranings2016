@@ -9,11 +9,19 @@
 
   <br>
 
+　
+  <div>
+  タイトル：『<%= @job.title %>』
+  </div>
 
+  <div>
+  説明文　：<%= @job.description %>
+  </div>
 
-  タイトル：『<%= @job.title %>』<br>
-  説明文　：<%= @job.description %><br>
-
+  <form action="entry" method="get">
+    <input name="job_id" type="hidden" value="<%= params[:id]%>" />
+  <button type="submit" name="entry">応募する！</button>
+  </form>
 
 
 
