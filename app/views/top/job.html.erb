@@ -5,18 +5,16 @@
     <title>池上研修リジョブ</title>
   </head>
   <body>
-   案件ページだよ
+  <br>
+   <h1>『<%= @job.title %>』</h1>
 
   <br>
 
-　
   <div>
-  タイトル：『<%= @job.title %>』
+  <%= @job.description %>
   </div>
 
-  <div>
-  説明文　：<%= @job.description %>
-  </div>
+  <br>
 
   <form action="entry" method="get">
     <input name="job_id" type="hidden" value="<%= params[:id]%>" />

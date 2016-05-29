@@ -8,10 +8,22 @@
 </head>
 
 <body>
+  <span style="color:#F0F;">
   <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "#{key}") %>
   <br>
   <% end %>
+  </span>
+
+  <Div Align="right">
+  <a href="new_user">新規会員登録へ</a>
+
+  <a href="login">ログイン</a>
+  </Div>
+
+
+
+
 <%= yield %>
 
 </body>

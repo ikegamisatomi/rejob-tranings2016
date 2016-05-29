@@ -6,29 +6,16 @@
   <body>
 
 <br>
-    管理画面だよ
+    <h1>管理画面</h1>
 <br>
-    <a href="admin_user">求職者管理</a>
+<h2><a href="admin_client">会社管理</a></h2>
 
+<h2><a href="admin_user">求職者管理</a></h2>
 
-<br>
-<br>
-    <% Job.all.each do |job| %>
-    <p><a href="/job?id=<%= job.id %>"><%= job.title %></a>　<%= job.description %>
-    <!-- 応募数<%= UsersJob.where(job_id: job.id).count %> -->
-    応募数：<%= Job.find_by(id: job.id).users_jobs.count %>
-    <a href="/edit?id=<%= job.id %>"><button type="submit" name=>編集</button></a> </p>
-    <% end %>
 
 
 
 <br>
-<br>
-
-      <a href="new">
-        <button type="submit" name="job">新規作成</button>
-      </a>
-
 
   </body>
 </html>

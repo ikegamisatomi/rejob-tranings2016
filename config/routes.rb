@@ -34,6 +34,7 @@ Rails.application.routes.draw do
    get 'new_user' => 'mypage#new_user'
    post 'new_user_through' => 'mypage#new_user_through'
    get 'logout' => 'mypage#logout'
+   get 'admin_client' => 'admin#admin_client'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

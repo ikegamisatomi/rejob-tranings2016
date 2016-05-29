@@ -5,20 +5,11 @@
     <title>池上研修リジョブ</title>
   </head>
   <body>
-    top画面だよ
-
-
-    <a href="search">一覧ページへ</a>
-
-    <a href="login">ログイン</a>
-
-    <a href="new_user">新規登録へ</a>
-
-
+    <h1>Welcome to REJOB</h1>
 <br>
+<h2><a href="search">一覧ページへ</a><h2>
 <br>
-
-
+    <h2>求人ページ一覧</h2>
     <% Job.all.each do |job| %>
     <a href="/job?id=<%= job.id %>"><%= job.title %></a><br>
     <% end %>

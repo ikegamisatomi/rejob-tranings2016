@@ -9,8 +9,11 @@ class TopController < ApplicationController
   end
 
   def search
-    @jobs = Job.where(city: params[:city])
-    #@area = params[:city]
+    if params[:city].nil?
+      @jobs = nil
+    else
+      @jobs = Area.find_by(city: params[:city]).jobs
+    end
   end
 
   def area

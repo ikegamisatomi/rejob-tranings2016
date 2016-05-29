@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>会社管理一覧</h1>
+
+    <br>
+          <a href="new">
+            <button type="submit" name="job">新規作成</button><br>
+          </a>
+    <br>
+        <% Job.all.each do |job| %>
+        <p><a href="/job?id=<%= job.id %>"><%= job.title %></a>　<%= job.description %>
+        <!-- 応募数<%= UsersJob.where(job_id: job.id).count %> -->
+        応募数：<%= Job.find_by(id: job.id).users_jobs.count %>
+        <a href="/edit?id=<%= job.id %>"><button type="submit" name=>編集</button></a> </p>
+        <% end %>
+
+    <br>
+  </body>
+</html>

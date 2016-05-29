@@ -30,9 +30,11 @@ class MypageController < ApplicationController
 
   def new_user_through
   if User.create(name: params[:name], age: params[:age], sex: params[:sex], password: params[:password])
-     redirect_to '/login'
+      flash[:create] = "登録完了"
+      redirect_to '/login'
   else
-     redirect_to '/top'
+      flash[:create] = "登録できませんでした"
+      redirect_to '/top'
   end
  end
 

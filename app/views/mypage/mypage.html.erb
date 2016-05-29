@@ -5,18 +5,18 @@
     <title></title>
   </head>
   <body>
-    マイページ
+    <h1><%= @user.name %>さんのマイページ</h1>
 
         <form action="mypage?id=<%=@user.id%>" method="get">
 
 <br>
 
-        あなたの応募数：<%= @entry.count %>
+        <h2>あなたの応募数：<%= @entry.count %></h2>
 
 
 <br>
 
-      <p> <a href="top">TOPへ</a> </p>   
+      <p> <a href="top">TOPへ</a> </p>
 
       <p> <a href="logout">ログアウト</a> </p>
 

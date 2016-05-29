@@ -5,10 +5,11 @@
     <title>池上研修リジョブ</title>
   </head>
   <body>
-    一覧画面だよ
+    <h1>都道府県別一覧ページ</h1>
 
+<div>
 <br>
-
+        <h2>都道府県検索</h2>
       <p>
         <form  action="search" method="get">
           都道府県：<select name="city">
@@ -18,17 +19,22 @@
           </select>
           <button type="submit" name="button">検索</button>
         </form>
+</div>
 
 <br>
-    <%= @jobs.count %>件です<br>
-
-<br>
-    <% @jobs.each do |job| %>
-　　<a href="/job?id=<%= job.id %>">
-タイトル：『<%= job.title %>』<br>
-説明文　：<%= job.description %><br><br>
-    </a>
+    <% unless @jobs.nil?  %>
+      <%= @jobs.count %>件です<br>
     <% end %>
+
+<br>
+  <% unless @jobs.nil? %>
+    <% @jobs.each do |job| %>
+      <a href="/job?id=<%= job.id %>">
+        タイトル：『<%= job.title %>』<br>
+        説明文　：<%= job.description %><br><br>
+      </a>
+    <% end %>
+  <% end %>
 
     <% Area.all.each do |area| %>
     <a href="/search?city=<%= area.city %>"><%= area.city %></a><br>
