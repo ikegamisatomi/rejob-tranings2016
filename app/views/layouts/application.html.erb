@@ -8,6 +8,9 @@
 </head>
 
 <body>
+<div class="header-top"></div>
+<section class="area_visionary"></section>
+
   <span style="color:#F0F;">
   <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "#{key}") %>
@@ -20,8 +23,6 @@
 
   <a href="login">ログイン</a>
   </Div>
-
-
 
 
 <%= yield %>

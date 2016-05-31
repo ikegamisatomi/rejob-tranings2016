@@ -9,17 +9,24 @@
 
   <br>
   登録者数　<%=  User.count %>名
-  <br>
-  <% User.all.each do |user| %>
-  <p> <%= user.name %>　<%= user.age %>歳 <%= user.sex %>
-  <!-- 応募数<%= UsersJob.where(user_id: user.id).count %> -->
-  応募数：<%= User.find_by(id: user.id).users_jobs.count %>
-  <a href="/edit_user?id=<%= user.id %>"><button type="submit" name=>編集</button></a> </p>
-  <% end %>
 
-<!-- #job. user_jobs. count -->
+    <table border=1 >
+    <tr>
+     <td>求職者ID</td>
+     <td>氏名</td>
+     <td>年齢</td>
+     <td>性別</td>
+     <td style="width:100px">edit</td>
+    </tr>
 
-
+      <% User.all.each do |user| %>
+     <tr>
+       <td><%= user.id %></td>
+       <td><%= user.name %></td>
+       <td><%= user.age %></td>
+       <td><%= user.sex %></td>
+       <td><a href="/edit_user?id=<%= user.id %>">edit</td>
+    <% end %>
 
   </body>
 </html>

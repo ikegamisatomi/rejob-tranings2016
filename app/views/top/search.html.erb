@@ -9,7 +9,7 @@
 
 <div>
 <br>
-        <h2>都道府県検索</h2>
+        <h2>都道府県で検索</h2>
       <p>
         <form  action="search" method="get">
           都道府県：<select name="city">
@@ -20,6 +20,20 @@
           <button type="submit" name="button">検索</button>
         </form>
 </div>
+
+<div>
+        <h2>給与で検索</h2>
+        <form  action="search" method="get">
+          給与：<select name="city">
+          <% Job.all.each do |paid| %>
+          <option value=<%= job.paid %> > <%= job.paid %></option>
+          <% end %>
+          </select>
+          <button type="submit" name="button">検索</button>
+        </form>
+</div>
+
+
 
 <br>
     <% unless @jobs.nil?  %>

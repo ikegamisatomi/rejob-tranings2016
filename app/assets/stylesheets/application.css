@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ .header-top{height:30px;background:#f08f9b;border-top:2px solid #ed7987}.header-top
+ .footer-nav{height:30px;background:#f08f9b;border-top:2px solid #ed7987}.footer-nav
+
+.area_visionary{margin:30px; border:20px; padding:15px; background:#99FFCC}.area_visionary

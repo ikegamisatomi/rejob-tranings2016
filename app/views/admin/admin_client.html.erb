@@ -7,17 +7,28 @@
   <body>
     <h1>会社管理一覧</h1>
 
-    <br>
-          <a href="new">
-            <button type="submit" name="job">新規作成</button><br>
-          </a>
-    <br>
-        <% Job.all.each do |job| %>
-        <p><a href="/job?id=<%= job.id %>"><%= job.title %></a>　<%= job.description %>
-        <!-- 応募数<%= UsersJob.where(job_id: job.id).count %> -->
-        応募数：<%= Job.find_by(id: job.id).users_jobs.count %>
-        <a href="/edit?id=<%= job.id %>"><button type="submit" name=>編集</button></a> </p>
-        <% end %>
+
+    <table border=1 >
+   <tr>
+     <td>会社ID</td>
+     <td>タイトル</td>
+     <td>詳細</td>
+   　<td style="width:50px">応募数</td>
+     <td style="width:50px">edit</td>
+   </tr>
+
+   <% Job.all.each do |job| %>
+     <tr>
+       <td><%= job.id %></td>
+       <td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
+       <td><%= job.description %></td>
+       <td><%= Job.find_by(id: job.id).users_jobs.count %>件</td>
+       <td><a href="/edit?id=<%= job.id %>">edit</a></td>
+   <% end %>
+
+
+</table>
+
 
     <br>
   </body>

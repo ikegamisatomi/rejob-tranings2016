@@ -14,6 +14,7 @@ class TopController < ApplicationController
     else
       @jobs = Area.find_by(city: params[:city]).jobs
     end
+
   end
 
   def area

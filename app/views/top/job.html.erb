@@ -9,11 +9,13 @@
    <h1>『<%= @job.title %>』</h1>
 
   <br>
-
   <div>
   <%= @job.description %>
   </div>
-
+  <br>
+  <div>
+  時給：<%= @job.paid %>
+  </div>
   <br>
 
   <form action="entry" method="get">
