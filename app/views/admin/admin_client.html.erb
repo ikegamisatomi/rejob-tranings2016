@@ -20,7 +20,7 @@
    <% Job.all.each do |job| %>
      <tr>
        <td><%= job.id %></td>
-       <td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
+       <td><a href="/job?id=<%= job.id %>"><%= job.title %></a></td>
        <td><%= job.description %></td>
        <td><%= Job.find_by(id: job.id).users_jobs.count %>件</td>
        <td><a href="/edit?id=<%= job.id %>">edit</a></td>

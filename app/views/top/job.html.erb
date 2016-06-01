@@ -5,26 +5,57 @@
     <title>池上研修リジョブ</title>
   </head>
   <body>
-  <br>
-   <h1>『<%= @job.title %>』</h1>
+
+<div class="content">
+    <br>
+     <h1>『<%= @job.title %>』</h1>
+
+  <section class="job-data">
+    <br>
+  <div class="job-data__side">電話番号<br>
+    090-XXXX-XXXX <br>
+    <a href="javascript:void(0)" class="btn btn--entry01 w-240px" data-bookmark-status="1"><i class="icon-attach"></i>キープする </a>
+    <br>
+    <form action="entry" method="get">
+      <input name="job_id" type="hidden" value="<%= params[:id]%>" />
+    <button name="button" type="submit" class="btn btn--entry01 btn--pt3 btn--kantan w-240px">Web応募する！</button>
+    </form>
+
+  </div>
+  <div class="search-job-box__content">
+    <div class="pct">
+      <a href="/job/1011389">
+        <figure>
+            <img src="https://d18gmz9e98r8v5.cloudfront.net/ptr/20130909043100_169256989_1298_9.bmp">
+        </figure>
+      </a>
+
+
+    <div class="area_visionary h2"><h2>詳細</h2></div>
+        <%= @job.description %>
+
+    <div class="area_visionary h2"><h2>勤務地</h2></div>
+        <%= @job %>
+
+    <div class="area_visionary h2"><h2>給与</h2></div>
+        時給：<%= @job.paid %>
+
+
+
+
 
   <br>
   <div>
-  <%= @job.description %>
-  </div>
-  <br>
-  <div>
-  時給：<%= @job.paid %>
+
   </div>
   <br>
 
-  <form action="entry" method="get">
-    <input name="job_id" type="hidden" value="<%= params[:id]%>" />
-  <button type="submit" name="entry">応募する！</button>
-  </form>
 
 
 
+ </div>
+</div>
+</section>
 
   </body>
 </html>

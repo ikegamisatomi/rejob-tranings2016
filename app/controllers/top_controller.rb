@@ -4,8 +4,6 @@ class TopController < ApplicationController
 
   def job
     @job = Job.find_by(id: params[:id])
-
-    #@area = Job.find_by(area: params[:area])
   end
 
   def search
@@ -18,7 +16,7 @@ class TopController < ApplicationController
   end
 
   def area
-    @area = Area.first.city
+    @area = Area.find_by(city: params[:city]).jobs
   end
 
 end

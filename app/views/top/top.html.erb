@@ -6,7 +6,7 @@
   </head>
   <body>
 
-
+<div class="content">
 
   <h1>Welcome to REJOB</h1>
 
@@ -16,8 +16,30 @@
     <h2>求人ページ一覧</h2>
     <% Job.all.each do |job| %>
     <a href="/job?id=<%= job.id %>"><%= job.title %></a><br>
-    <% end %>
 
+
+            <section class="box-pt1 mb_20">
+                      <div class="heading2-pt2 heading2-pt2--border-bt">
+                        <h2>新着求人</h2>
+                      </div>
+                      <div class="row row-mg mb_20">
+
+                        <div class="cols_4 boxset-pt1">
+                          <a href="/job/B2366987">
+                            <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/V21spg/dOXzp9/JNQ8xD/PbG86d/ujA/recommend.JPG?1464680164" alt=""></figure>
+                            <h3 class="boxset-pt1__title">
+                              <%= job.title %>
+                            </h3>
+                          </a>
+                          <p class="boxset-pt1__corp"></p>
+                          <dl class="boxset-pt1__terms">
+                              <%= job.description %>
+                        </div>
+                      </div>
+                    </section>
+
+
+  <% end %>
 
   </body>
 </html>
