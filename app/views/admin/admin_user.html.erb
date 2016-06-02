@@ -5,14 +5,18 @@
     <title></title>
   </head>
   <body>
+    <Div Align="right">
+    <a href="admin">adminトップへ</a>
+    </Div>
+
     <h1>求職者管理一覧</h1>
 
   <br>
-  登録者数　<%=  User.count %>名
+  <h2>登録者数　<%=  User.count %>名</h2>
 
-    <table border=1 >
-    <tr>
-     <td>求職者ID</td>
+    <table border=1 height="200" width="500">
+    <tr style="background:#BBBBBB">
+     <td width="50">求職者ID</td>
      <td>氏名</td>
      <td>年齢</td>
      <td>性別</td>
@@ -21,11 +25,11 @@
 
       <% User.all.each do |user| %>
      <tr>
-       <td><%= user.id %></td>
+       <td align="center"><%= user.id %></td>
        <td><%= user.name %></td>
-       <td><%= user.age %></td>
-       <td><%= user.sex %></td>
-       <td><a href="/edit_user?id=<%= user.id %>">edit</td>
+       <td align="center"><%= user.age %></td>
+       <td align="center"><%= user.sex %></td>
+       <td align="center"><a href="/edit_user?id=<%= user.id %>">edit</td>
     <% end %>
 
   </body>

@@ -11,31 +11,90 @@
   <h1>Welcome to REJOB</h1>
 
 <br>
-<h2><a href="search">一覧ページへ</a><h2>
+<h2><a href="search">求人検索はこちら</a><h2>
 <br>
     <h2>求人ページ一覧</h2>
-    <% Job.all.each do |job| %>
-    <a href="/job?id=<%= job.id %>"><%= job.title %></a><br>
-
-
-            <section class="box-pt1 mb_20">
+    <% Job.first(1).each do |job| %>
+           <section class="box-pt1 mb_20">
                       <div class="heading2-pt2 heading2-pt2--border-bt">
                         <h2>新着求人</h2>
                       </div>
                       <div class="row row-mg mb_20">
 
                         <div class="cols_4 boxset-pt1">
-                          <a href="/job/B2366987">
+                          <a href="/job?id=<%= Job.last.id %>">
                             <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/V21spg/dOXzp9/JNQ8xD/PbG86d/ujA/recommend.JPG?1464680164" alt=""></figure>
                             <h3 class="boxset-pt1__title">
-                              <%= job.title %>
+                              <%= Job.last.title %>
                             </h3>
                           </a>
                           <p class="boxset-pt1__corp"></p>
                           <dl class="boxset-pt1__terms">
-                              <%= job.description %>
+                              <%= Job.last.description %>
                         </div>
+
+                        <div class="cols_4 boxset-pt1">
+                          <a href="/job?id=<%= Job.second.id %>">
+                            <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/doRCpZ/GdANOt/TE8f1T/mV1UT4/lkE/recommend.jpg?1464745665" alt=""></figure>
+                            <h3 class="boxset-pt1__title">
+                              <%= Job.second.title %>
+                            </h3>
+                          </a>
+                          <p class="boxset-pt1__corp"></p>
+                          <dl class="boxset-pt1__terms">
+                              <%= Job.second.description %>
+                        </div>
+
+                        <div class="cols_4 boxset-pt1">
+                          <a href="/job?id=<%= Job.third.id %>">
+                            <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/i8uO_6/NCPz32/JuFZKT/DhVnof/Sbo/recommend.jpg?1464427753" alt=""></figure>
+                            <h3 class="boxset-pt1__title">
+                              <%= Job.third.title %>
+                            </h3>
+                          </a>
+                          <p class="boxset-pt1__corp"></p>
+                          <dl class="boxset-pt1__terms">
+                              <%= Job.third.description %>
+            ◇...</dd>
+                          </dl>
+                        </div>
+                        </div><div class="row row-mg mb_20">
+                        <div class="cols_4 boxset-pt1">
+                          <a href="/job?id=<%= Job.fourth.id %>">
+                            <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/vxqNzh/juRaxZ/SjBHDd/wVR7Yc/NWU/recommend.jpg" alt=""></figure>
+                            <h3 class="boxset-pt1__title">
+                              <%= Job.fourth.title %>
+                            </h3>
+                          </a>
+                          <p class="boxset-pt1__corp"></p>
+                          <dl class="boxset-pt1__terms">
+                              <%= Job.fourth.description %>
+                        </div>
+
+                        <div class="cols_4 boxset-pt1">
+                          <a href="/job?id=<%= Job.fifth.id %>">
+                            <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/WVDNBx/H-AaGd/NpdEUt/Xc3HV_/eHM/recommend.JPG?1464750238" alt=""></figure>
+                            <h3 class="boxset-pt1__title">
+                              <%= Job.fifth.title %>
+                            </h3>
+                          </a>
+                          <p class="boxset-pt1__corp"></p>
+                          <dl class="boxset-pt1__terms">
+                              <%= Job.fifth.description %>
+                        </div>
+
+                        <div class="cols_4 boxset-pt1">
+                          <a href="/job?id=<%= Job.first.id %>">
+                            <figure><img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/ISSdAA/ae096T/7fk9Ym/3t-g2s/G9E/recommend.jpg?1464685462" alt=""></figure>
+                            <h3 class="boxset-pt1__title">
+                              <%= Job.first.title %>
+                            </h3>
+                          </a>
+                          <p class="boxset-pt1__corp"></p>
+                          <dl class="boxset-pt1__terms">
+                              <%= Job.first.description %>
                       </div>
+
                     </section>
 
 

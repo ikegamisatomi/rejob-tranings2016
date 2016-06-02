@@ -30,7 +30,7 @@ Job.create(title: 'やる気・元気のある方大歓迎!オリンピック選
 Job.create(title: '★研修充実★ほぐし〜カイロプラクティック矯正も学べます★', description: 'besthandsグループ 世田谷区を拠点に5院', paid: 2500)
 Job.create(title: 'テルマー湯内、スタッフ大募集!', description: '新設される高級SPA内に併設されるアロマ・エステサロンのオープニングスタッフの募集です!')
 Job.create(title: '未経験の方もOK☆接客も技術もプロのセラピストに!', description: 'アットホームな当店ではご家族、カップルでのご利用も多く、 癒しを求める方々にたくさんの支持をいただいております', paid: 2500)
-Job.create(title: '向上心のある方、やる気のある方なら未経験でも大歓迎です。', description: '愛心グループでは、未来の経営者、幹部候補生をお待ちしています', paid: 2500)
+Job.create(title: '向上心のある方なら未経験でも大歓迎です。', description: '愛心グループでは、未来の経営者、幹部候補生をお待ちしています', paid: 2500)
 
 Area.create(city: '東京')
 Area.create(city:  '神奈川')
@@ -102,10 +102,11 @@ JobsArea.create(job_id: 19, area_id:7)
 JobsArea.create(job_id: 20, area_id:1)
 
 
-User.create(name: '池上里実', age:'22', sex:'女', password:'rejob001')
-User.create(name: '野崎優子', age:'32', sex:'女', password:'rejob1234')
-User.create(name: '黒田廉', age:'24', sex:'女', password:'sakura123')
-User.create(name: '荻野夏帆', age:'44', sex:'女', password:'sakurapj')
+User.create(name: '池上里実', age:'22', sex:'女', password:'ikegami')
+User.create(name: '野崎優子', age:'32', sex:'女', password:'nozaki')
+User.create(name: '黒田廉', age:'24', sex:'男', password:'kuroda')
+User.create(name: '荻野夏帆', age:'44', sex:'女', password:'ogino')
+User.create(name: '小林真奈', age:'22', sex:'女', password:'kobayashi')
 
 UsersJob.create(user_id: 1, job_id: 1)
 UsersJob.create(user_id: 2, job_id: 2)

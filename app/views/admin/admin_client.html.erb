@@ -5,27 +5,30 @@
     <title></title>
   </head>
   <body>
+    <Div Align="right">
+    <a href="admin">adminトップへ</a>
+    </Div>
+
+
     <h1>会社管理一覧</h1>
 
-
-    <table border=1 >
-   <tr>
-     <td>会社ID</td>
-     <td>タイトル</td>
-     <td>詳細</td>
-   　<td style="width:50px">応募数</td>
-     <td style="width:50px">edit</td>
+    <table border=1 height="1000" align="center">
+   <tr = style="background:#BBBBBB">
+     <td align="center">会社ID</td>
+     <td align="center">タイトル</td>
+     <td align="center">詳細</td>
+   　<td align="center" style="width:50px">応募数</td>
+     <td align="center" style="width:50px">edit</td>
    </tr>
 
    <% Job.all.each do |job| %>
      <tr>
-       <td><%= job.id %></td>
+       <td align="center"><%= job.id %></td>
        <td><a href="/job?id=<%= job.id %>"><%= job.title %></a></td>
        <td><%= job.description %></td>
-       <td><%= Job.find_by(id: job.id).users_jobs.count %>件</td>
-       <td><a href="/edit?id=<%= job.id %>">edit</a></td>
+       <td align="center"><%= Job.find_by(id: job.id).users_jobs.count %>件</td>
+       <td align="center"><a href="/edit?id=<%= job.id %>">edit</a></td>
    <% end %>
-
 
 </table>
 

@@ -5,34 +5,38 @@
     <title>池上研修リジョブ</title>
   </head>
   <body>
-    <h1>都道府県別一覧ページ</h1>
-
-
-
+    <h1>求人検索ページ</h1>
 
     <div class="content">
 
 <br>
-<br>
-      <% Area.all.each do |area| %>
-      <a href="/search?city=<%= area.city %>"><%= area.city %></a>
-      <% end %>
-
-<div>
-<br>
-<br>
-        <h2>都道府県で検索</h2>
-      <p>
-        <form  action="search" method="get">
-        <select name="city">
-          <option selected>▼都道府県選択</option>
-          <% Area.all.each do |area| %>
-          <option value=<%= area.city %>><%= area.city %><br></option>
-          <% end %>
+<h2>都道府県で検索</h2>
+<p>
+      <form  action="search" method="get">
+      <select name="city">
+        <option selected>▼都道府県選択</option>
+        <% Area.all.each do |area| %>
+        <option value=<%= area.city %>><%= area.city %><br></option>
+        <% end %>
       </select>
       <button name="button" type="submit" class="btn btn--xsmall btn--pt3 w-100px">検索！</button>
       </form>
-</div>
+<br>
+<section class="search-job-box">
+        <div class="search-job-box__header table_row">
+          <div class="cols_8">
+            <span class="search-job-box__header__corp">
+      <% Area.all.each do |area| %>
+      <a href="/search?city=<%= area.city %>"><%= area.city %></a>
+      <% end %>
+    </span>
+       </div>
+     </div>
+</section>
+<div>
+<br>
+<br>
+
 
 <br>
     <% unless @jobs.nil?  %>
@@ -106,7 +110,6 @@
     <div class="search-job-box__header table_row">
       <div class="cols_8">
         <span class="search-job-box__header__corp">
-        <%= @jobs %>
         </span>
         <h2 class="search-job-box__header__title">
           <a href="/job?id=<%= job.id %>">『<%= job.title %>』</a>

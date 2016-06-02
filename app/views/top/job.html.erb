@@ -35,10 +35,13 @@
         <%= @job.description %>
 
     <div class="area_visionary h2"><h2>勤務地</h2></div>
-        <%= @job %>
+        <% @job.areas.each do |area| %>
+          <%= area.city %>
+        <% end %>
+
 
     <div class="area_visionary h2"><h2>給与</h2></div>
-        時給：<%= @job.paid %>
+        時給 <%= @job.paid %> 円
 
 
 

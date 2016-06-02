@@ -4,6 +4,7 @@ class TopController < ApplicationController
 
   def job
     @job = Job.find_by(id: params[:id])
+    
   end
 
   def search

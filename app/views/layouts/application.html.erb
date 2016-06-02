@@ -8,21 +8,27 @@
 </head>
 
 <body>
+  <Div Align="right">
+    <FONT size = "3">
+      <a href="new_user">新規会員登録へ</a>
+      <a href="login">ログイン</a>
+    </FONT>
+  </Div>
+<a class="header-middle__logo" href="/top"><img class="logo_header" src="https://rejob.co.jp/wp-content/themes/simplicity/images/logo.png" alt="Logo header"></a>
+
+
 <div class="header-top"></div>
 <section class="area_visionary"></section>
 
   <span style="color:#F0F;">
-  <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-  <br>
-  <% end %>
+    <FONT size = "3">
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+      <br>
+      <% end %>
+    </FONT>
   </span>
 
-  <Div Align="right">
-  <a href="new_user">新規会員登録へ</a>
-
-  <a href="login">ログイン</a>
-  </Div>
 
 
 <%= yield %>
